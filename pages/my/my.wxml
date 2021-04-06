@@ -1,0 +1,17 @@
+<!--pages/my/my.wxml-->
+<view class="head">
+  <view class="user">您好，{{ userName }}
+    <view bind:touchend="jump" class="jump" >【{{ userName ? "退出登录" : "请登录" }}】
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>
+<navigator url="/pages/userManage/userManage" wx:if="{{ sign === 1 }}">
+  <view class="nav"> 用户管理<van-icon name="arrow" /></view>
+</navigator>
+<navigator>
+  <view class="nav"> 修改密码<van-icon name="arrow" /></view>
+</navigator>
+<navigator>
+  <view class="nav"> 修改邮箱<van-icon name="arrow" /></view>
+</navigator>

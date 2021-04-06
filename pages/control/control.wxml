@@ -1,0 +1,22 @@
+<!--pages/control/control.wxml-->
+<view>
+  <view class="top">园艺管理系统</view>
+  <van-collapse accordion value="{{ activeName }}" bind:change="collChange" >
+      <van-collapse-item wx:for="{{devData}}" wx:key="deviceId" title="{{item.deviceName}}" name="{{item.deviceId}}">
+        <view class="item">
+          <view class="text">设备状态：</view>
+          {{ state }}
+        </view>
+        <view class="item">
+          <view class="text">灯：</view>
+          <van-button round size = "mini" color = "#07c160" disabled = "{{isBan}}" bind:click = "clickBtn" data-id = "{{item.deviceId}}" data-msg="LED=\"ON\"">打开</van-button>
+          <van-button round size = "mini" color = "#fc9176" disabled = "{{isBan}}" bind:click = "clickBtn" data-id = "{{item.deviceId}}" data-msg="LED=\"OFF\"">关闭</van-button>
+        </view>
+        <view class="item">
+          <view class="text">水泵：</view>
+          <van-button round size = "mini" color = "#07c160" disabled = "{{isBan}}" bind:click = "clickBtn" data-id = "{{item.deviceId}}" data-msg="PUM=\"ON\"">打开</van-button>
+          <van-button round size = "mini" color = "#fc9176" disabled = "{{isBan}}" bind:click = "clickBtn" data-id = "{{item.deviceId}}" data-msg="PUM=\"OFF\"">关闭</van-button>
+        </view>
+      </van-collapse-item>
+    </van-collapse>
+</view>

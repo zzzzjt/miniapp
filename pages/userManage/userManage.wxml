@@ -1,0 +1,47 @@
+<!--pages/userManage/userManage.wxml-->
+<view>
+  <view class="top">
+    <view class="btn-return" bindtap="returnPage"><van-icon name="arrow-left" />  返回</view>
+    <van-notify id="van-notify" />
+    <van-search value="{{ value }}" shape="round"
+      background="#4fc08d"
+      placeholder="请输入关键词查找用户"
+    />
+    <van-button type="info" custom-class="btn" bindtap="openDialog">添加用户</van-button>
+    <van-dialog
+      use-slot
+      title="添加用户"
+      show="{{ show }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="onClose"
+      bind:getuserinfo="getUserInfo"
+    >
+    <van-cell-group>
+      <van-field
+        model:value="{{ email }}"
+        placeholder="请输入邮箱"
+        border="{{ false }}"
+        bind:change="onChange"
+        />
+    </van-cell-group>
+    </van-dialog>
+    <van-dialog id="van-dialog" />
+  </view>
+  <view class="table">
+    <view class="tr">
+      <view class="th" wx:for="{{headList}}" wx:key = "item">
+        {{item}}
+      </view>
+    </view>
+    <block wx:for="{{userData}}" wx:key = "name">
+      <view class="tr">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.email}}</view>
+        <view class="td">
+          <text data-id="{{item._id}}" bindtap="delUser">删除 </text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

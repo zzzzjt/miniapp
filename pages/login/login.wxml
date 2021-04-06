@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class="loginForm">
+  <view class="logoBox">
+    <image src="../../images/logo.png" mode="aspectFit" class="logo"></image>
+  </view>
+  <view class="formItem">
+    <!-- <view class="title">用户名：</view> -->
+    <input model:value="{{email}}" placeholder="请输入邮箱" />
+  </view>
+  <view class="hr"></view>
+  <view class="formItem">
+    <!-- <view class="title">密码：</view> -->
+    <input model:value="{{pwd}}" password placeholder="请输入密码" />
+  </view>
+  <view class="hr"></view>
+  <button class="btn" bindtap="login">登录</button>
+</view>

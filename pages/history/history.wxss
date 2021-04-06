@@ -1,0 +1,31 @@
+/* pages/history/history.wxss */
+.top{
+  padding-top: 75rpx;
+  background-color: #f8cf7d;
+  font-size: 37rpx;
+  color: rgb(255, 253, 253);
+  padding-left: 40rpx;
+  height: 75rpx;
+  margin-bottom: 50rpx;
+}
+.item{
+  margin-bottom: 10rpx;
+  font-size: small;
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  align-items: center;
+}
+.title{
+  width: 270rpx;
+  padding-left: 40rpx;
+}
+.van-cell{
+  --cell-vertical-padding:1px;
+  --cell-horizontal-padding:0;
+  width: 200rpx;
+  background-color: #f8cf7d;
+}
+.btn{
+  padding: 20rpx;
+}

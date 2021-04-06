@@ -1,0 +1,27 @@
+/* pages/control/control.wxss */
+.top{
+  padding-top: 75rpx;
+  background-color: #f8cf7d;
+  font-size: 37rpx;
+  color: rgb(255, 253, 253);
+  padding-left: 40rpx;
+  height: 75rpx;
+  margin-bottom: 50rpx;
+}
+.item{
+  height: 80rpx;
+  display: flex;
+  line-height: 80rpx;
+}
+.text{
+  width: 170rpx;
+  text-align: right;
+}
+.openBtn{
+  margin: 0 20rpx;
+  background-color: #55e255;
+  color: #fd7f5f;
+}
+.van-button{
+  margin-left: 30rpx;
+}

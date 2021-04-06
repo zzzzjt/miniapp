@@ -1,0 +1,24 @@
+<!--components/table/table.wxml-->
+<view class="table">
+  <view class="tr">
+    <view class="th" wx:for="{{headList}}" wx:key = "item" 
+    style="width: {{item.width + 'rpx'}}">
+      {{item.label}}
+    </view>
+  </view>
+  <block wx:for="{{data}}" wx:key = "index">
+    <view class="tr">
+      <view class="td" wx:for="{{headList}}" wx:for-item="head"
+      wx:key = "head"
+      style="width: {{head.width + 'rpx'}}"
+      >
+        <view class="txt" wx:if="{{head.prop === 'detail'}}">查看</view>
+        <view class="txt" wx:else> {{item[head.prop]}} </view>
+    </view>
+    </view>
+  </block>
+  <view wx:if="{{data.length === 0}}">
+    <view>暂无数据</view>
+  </view>
+</view>
+

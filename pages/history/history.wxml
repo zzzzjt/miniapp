@@ -1,0 +1,60 @@
+<!--pages/history/history.wxml-->
+<view>
+  <view class="top">园艺管理系统</view>
+  <view class="item">
+    <view class="title">设备名及数据名:</view>
+    <van-cell title="{{ devName }},{{ dataName }}" is-link bind:click="showPopup" />
+  </view>
+  <view class="item">
+    <view class="title">开始时间:</view>
+    <van-cell title="{{ startTime }}" is-link bind:click="showTime" data-sign="start"/>
+  </view>
+  <view class="item">
+    <view class="title">结束时间:</view>
+    <van-cell title="{{ endTime }}" is-link bind:click="showTime" data-sign="end"/>
+  </view>
+  <view class="item">
+    <view class="title">数据数:</view>   
+  </view>
+  <view class="btn">
+      <van-button type="primary" size ="small" block  round bindtap="getHistoryData">查询</van-button>
+    </view>
+  <van-popup
+    show="{{ showTime }}"
+    position="bottom"
+    bind:close="closeTime"
+  >
+    <van-datetime-picker
+      type="datetime"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      max-date="{{ maxDate }}"
+      bind:input="onInput"
+      bind:confirm="timeConfirm"
+      bind:cancel="closeTime"
+    />
+  </van-popup>
+  <van-popup
+    show="{{ show }}"
+    position="bottom"
+    bind:close="onClose"
+  >
+    <van-picker
+      show-toolbar
+      title="请选择"
+      columns="{{ columns }}"
+      visible-item-count = "3"
+      bind:cancel="onClose"
+      bind:confirm="onConfirm"
+    /> 
+  </van-popup>
+  <!-- <picker columns="{{ arrName }}" bindchange="bindPickerChange" value="{{ index }}" range="{{ arrName }}">
+    <view>
+       <text>{{arrName[index]}}</text>
+      </view>
+  </picker> -->
+  
+  <!-- <van-dropdown-menu class="select">
+    <van-dropdown-item value="{{ value }}" options="{{ optionName }}" />
+</van-dropdown-menu> -->
+</view>

@@ -1,0 +1,23 @@
+/* pages/my/my.wxss */
+.head{
+  height: 240rpx;
+  background-color: darkkhaki;
+  width: 100%;
+  padding-top: 150rpx;
+}
+.user{
+  display: flex;
+  height: 50rpx;
+  width: 100%;
+}
+.jump{
+  color: red;
+}
+.nav{
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  border-bottom: 1px solid #ebe9e9;
+}

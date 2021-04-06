@@ -1,0 +1,9 @@
+{
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-notify": "@vant/weapp/notify/index"
+  }
+}

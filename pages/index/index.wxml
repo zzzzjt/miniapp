@@ -1,0 +1,43 @@
+<!--pages/index/index.wxml-->
+<view class="all">
+  <van-notify id="van-notify" />
+  <view class="top">园艺管理系统</view>
+  <view class="content">
+    <van-search value="{{ value }}" placeholder="请输入设备名" />
+    <view class="btn">
+      <van-button icon="plus" type="primary" size ="small" block  round bindtap="onChange">添加设备</van-button>
+    </view>
+    <van-dialog
+      use-slot
+      title="添加设备"
+      show="{{ show }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="onChange"
+      bind:getuserinfo="addDevice"
+    >
+      <van-field
+        model:value = "{{ devName }}"
+        placeholder = "请输入设备名"
+        border = "{{ false }}"
+      />
+      <van-field
+        model:value="{{ devId }}"
+        placeholder="请输入设备号"
+        border="{{ false }}"
+      />
+    </van-dialog>
+
+    <van-collapse accordion value="{{ activeName }}" bind:change="collChange" >
+      <van-collapse-item wx:for="{{devData}}" wx:key="deviceId" title="{{item.deviceName}}" name="{{item.deviceId}}">
+        <view>设备状态：{{timeData.msg}}</view>
+        <view>温度：{{timeData.tem}}</view>
+        <view>湿度：{{timeData.hum}}</view>
+        <view>光照强度：{{timeData.light}}</view>
+        <view>灯的状态：{{timeData.led}}</view>
+        <view>水泵状态：{{timeData.pum}}</view>
+        <view>最新数据采集时间：{{timeData.date}}</view>
+      </van-collapse-item>
+    </van-collapse>
+  </view>
+</view>

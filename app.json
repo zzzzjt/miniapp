@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/index/index",
+    "pages/control/control",
+    "pages/history/history",
+    "pages/my/my",
+    "pages/user/user",
+    "pages/userManage/userManage",
+    "pages/modifyPwd/modifyPwd",
+    "components/table/table"
+  ],
+  "window":{
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#D53e37",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text":"首页",
+        "iconPath": "images/bar/movie-0.jpg",
+        "selectedIconPath": "images/bar/movie-1.jpg"
+      }, 
+      {
+        "pagePath": "pages/control/control",
+        "text":"控制",
+        "iconPath": "images/bar/find-0.jpg",
+        "selectedIconPath": "images/bar/find-1.jpg"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text":"历史",
+        "iconPath": "images/bar/cinema-0.jpg",
+        "selectedIconPath": "images/bar/cinema-1.jpg"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text":"我的",
+        "iconPath": "images/bar/me-0.jpg",
+        "selectedIconPath": "images/bar/me-1.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-notify": "@vant/weapp/notify/index"
+  }
+}
